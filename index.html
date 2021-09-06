@@ -2,9 +2,62 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script defer src="back/sls.js"></script>
+    <script defer src="back/ws.js"></script>
+    <script defer src="back/4saw.js"></script>
+    <style>
+        body {
+            background: #fff;
+        }
+        #canvasOverlay {
+            box-sizing : border-box;
+            min-width:100vw;
+	        height:100vh;
+	        min-height:100vh;
+	        overflow: hidden;
+	        position: fixed;
+            mix-blend-mode: hard-light;
+            background-size:cover;
+        }
+
+       #bg {
+            box-sizing : border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /*min-height: 100vh;*/
+            padding-top: 0%;
+            background-size:cover;
+            background: linear-gradient(to bottom,
+            hsl(110, 60%, 40%),
+            hsl(130, 50%, 60%),
+            hsl(175, 40%, 40%));
+            background-size: cover;
+            animation: AnimationName 10s ease infinite;
+       }
+
+       @keyframes AnimationName {
+            0% {
+                background-position: 50% 0
+            }
+            50% {
+                background-position: 70% 100%
+            }
+            100% {
+                background-position: 100% 0
+            } 
+       }
+    </style>
     <title>test site</title>
 </head>
 <body>
-    <p>Dante Must Die</p>
+    <section id="bg">
+        <canvas id="canvasOverlay"></canvas>
+        <p>Dante Must Die<br><br></p>
+    </section>
 </body>
 </html>
