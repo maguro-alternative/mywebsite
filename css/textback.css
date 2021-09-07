@@ -1,0 +1,69 @@
+@media screen and (min-width: 768px) {
+	/*PC*/
+	.textback {
+		background: #fff;
+		min-width: 70%;
+		padding: 20px;
+		border: 5px solid #999;
+		border-radius: 10px;
+		line-height:1.8rem;
+	}
+	.mainbar{
+		flex-basis: 60%;
+		margin-left: 10px;
+		min-width: 65%;
+	}
+	.wrapper {
+		display: flex;
+		/*max-width: 940px;*/
+		justify-content: space-around;
+		position: relative;
+		flex-wrap: nowrap;
+	}
+}
+@media screen and (max-width: 767px) {
+	/*iphone*/
+	.textback {
+		background: #fff;
+		min-width: 70%;
+		padding: 20px;
+		border: 5px solid #999;
+		border-radius: 10px;
+		line-height:1.8rem;
+	}
+	.mainbar{
+		flex-basis: 60%;
+		margin-left: 10px;
+		min-width: 65%;
+	}
+	.wrapper {
+		display: flex;
+		/*max-width: 940px;*/
+		justify-content: space-around;
+		position: relative;
+		flex-wrap: nowrap;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 1280px) {
+	/*（ここにタブレット用スタイルを記述）*/
+	.textback {
+		background: #fff;
+		min-width: 70%;
+		padding: 20px;
+		border: 5px solid #999;
+		border-radius: 10px;
+		line-height:1.8rem;
+	}
+	.mainbar{
+		flex-basis: 60%;
+		margin-left: 10px;
+		min-width: 65%;
+	}
+	.wrapper {
+		display: flex;
+		/*max-width: 940px;*/
+		justify-content: space-around;
+		position: relative;
+		flex-wrap: nowrap;
+	}
+}
