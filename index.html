@@ -11,8 +11,15 @@
     <script defer src="back/ws.js"></script>
     <script defer src="back/4saw.js"></script>
     <style>
+        #ba{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow-x: visible;
+            overflow-y: visible;
+        }
         #canvasOverlay {
-            
             /*top: 0;
             left: 0;
             width: 100%;
@@ -20,14 +27,14 @@
 	        min-height:100vh;*/
 	        overflow-x: visible;
             overflow-y: visible;
-            position: absolute;
+            position: fixed;
 	        /*position: fixed;*/
-            mix-blend-mode: hard-light;
+            background-blend-mode: hard-light;
         }
        #bg {
             color: red;
             /*position: fixed;*/
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -60,6 +67,7 @@
     <title>test site</title>
 </head>
 <body>
+    <div id="ba">
     <div id="bg">
         <canvas id="canvasOverlay"></canvas>
         <img class="pic-pc" src="pic/sigre.png">
@@ -75,6 +83,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
