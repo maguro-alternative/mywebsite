@@ -22,7 +22,7 @@
 	text-align: center;
 	background-image: url("../pic/sigre.png");
 	width: 1000px;
-    height: 1000px;
+    	height: 1000px;
 	margin: 20px;
 	position: relative;
 	border-radius: 10px;
@@ -46,8 +46,8 @@
 	/*top: 0;
 	left: 0;*/
 	/*width: 100%;
-	/*min-width:100vw;
-	min-height:100vh;*/
+	min-width:100vw;
+	min-height:100vh;
 	overflow-x: visible;
 	overflow-y: visible;
 	position: fixed;
