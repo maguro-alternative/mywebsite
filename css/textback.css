@@ -64,8 +64,8 @@
 	/*min-width:100vw;
 	height:100vh;
 	min-height:100vh;*/
-	overflow-x: visible;
-	overflow-y: visible;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	min-height: 100vh;
 	padding-top: 0%;
 	background: linear-gradient(to bottom,
