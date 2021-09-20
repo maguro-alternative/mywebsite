@@ -45,9 +45,9 @@
 #canvasOverlay {
 	/*top: 0;
 	left: 0;*/
-	/*width: 100%;
-	min-width:100vw;
-	min-height:100vh;
+	width: 100%;
+	/*min-width:100vw;
+	min-height:100vh;*/
 	overflow-x: visible;
 	overflow-y: visible;
 	position: fixed;
