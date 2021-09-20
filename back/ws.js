@@ -14,8 +14,9 @@ class WaveShape extends createjs.Shape {
    * @param maxLines  線自体の個数です。
    * @param maxVertex 線の水平方向の頂点数です。
    * @param debugMode デバッグモードとして実行するかの設定です。trueの場合、デバッグ表示が有効になります。
+   * window.matchMedia('(max-width: 767px)')
    */
-  constructor(maxLines = 10, maxVertex = 5, debugMode = window.matchMedia('(max-width: 767px)')) {
+  constructor(maxLines = 10, maxVertex = 5, debugMode = False) {
     super();
     /**
      * 時間経過を示す媒介変数です。
