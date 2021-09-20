@@ -18,15 +18,50 @@
 	position: relative;
 	flex-wrap: nowrap;
 }
+.top-image {
+	text-align: center;
+	background-image: url("../pic/sigre.png");
+	width: 1000px;
+    height: 1000px;
+	margin: 20px;
+	position: relative;
+	border-radius: 10px;
+	animation: fadeIn 1s;
+}
+.pic-pc{
+	position: relative;
+	width: 500px;
+	height: 500px;
+}
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
 @media screen and (min-width: 768px) {
 	/*PC*/
-	
+	img[src$="../pic/sigre.png"]{
+		position: relative;
+		width: 100px;
+		height: 100px;
+	}
 }
 @media screen and (max-width: 767px) {
 	/*iphone*/
-	
+	.pic-pc{
+		position: relative;
+		width: 180px;
+		height: 180px;
+	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
 	/*（ここにタブレット用スタイルを記述）*/
-	
+	.pic-pc{
+		position: relative;
+		width: 300px;
+		height: 300px;
+	}
 }
