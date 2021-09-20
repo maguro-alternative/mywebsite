@@ -25,7 +25,6 @@
             mix-blend-mode: hard-light;
             
         }
-
        #bg {
             color: red;
             box-sizing : border-box;
@@ -36,10 +35,9 @@
             /*min-width:100vw;
 	        height:100vh;
 	        min-height:100vh;*/
-            overflow: visible;
-            /*min-height: 100vh;*/
+            overflow-x: visible;
+            min-height: 100%;
             padding-top: 0%;
-            
             background: linear-gradient(to bottom,
             hsl(110, 60%, 40%),
             hsl(130, 50%, 60%),
@@ -49,13 +47,13 @@
 
        @keyframes AnimationName {
             0% {
-                background-position: 50% 0
+                background-position: 50% 0%
             }
             50% {
-                background-position: 70% 100%
+                background-position: 70% 50%
             }
             100% {
-                background-position: 100% 0
+                background-position: 100% 50%
             } 
        }
     </style>
