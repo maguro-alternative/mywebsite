@@ -16,7 +16,7 @@ class WaveShape extends createjs.Shape {
    * @param debugMode デバッグモードとして実行するかの設定です。trueの場合、デバッグ表示が有効になります。
    * window.matchMedia('(max-width: 767px)')
    */
-  constructor(maxLines = 10, maxVertex = 5, debugMode = False) {
+  constructor(maxLines = 10, maxVertex = 5, debugMode = false) {
     super();
     /**
      * 時間経過を示す媒介変数です。
