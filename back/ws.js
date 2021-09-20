@@ -43,7 +43,7 @@ class WaveShape extends createjs.Shape {
     for (let i = 0; i < this._maxLines; i++) {
       let lineWidth = (0.05 * i) + 0.10; // ゼロ対策(ゼロのときに太さが1pxになるため)
       // デバッグ機能が有効の場合は
-      if (this._debugMode==True) {
+      if (this._debugMode) {
         // 線を2pxで描く
         lineWidth = 1.0;
       }
@@ -111,7 +111,7 @@ class WaveShape extends createjs.Shape {
     this.graphics.endStroke();
     // デバッグ機能
     // 曲線のもとになっている頂点を可視化
-    if (this._debugMode==True) {
+    if (this._debugMode) {
       for (let i = 0; i < points.length; i++) {
         // マウスの軌跡を変数に保存
         const p0x = points[i - 0].x;
