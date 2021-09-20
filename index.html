@@ -12,6 +12,7 @@
     <script defer src="back/4saw.js"></script>
     <style>
         #ba{
+            background-color: rgb(60, 175, 37);
             position: absolute;
             top: 0;
             left: 0;
@@ -29,7 +30,7 @@
             overflow-y: visible;
             position: fixed;
 	        /*position: fixed;*/
-            background-blend-mode: hard-light;
+            mix-blend-mode: hard-light;
         }
        #bg {
             color: red;
@@ -68,7 +69,7 @@
 </head>
 <body>
     <div id="ba">
-    <div id="bg">
+        <div id="bg"></div>
         <canvas id="canvasOverlay"></canvas>
         <img class="pic-pc" src="pic/sigre.png">
         <div class="wrapper">
@@ -83,7 +84,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>
