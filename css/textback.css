@@ -11,6 +11,23 @@
 	margin-left: 10px;
 	min-width: 65%;
 }
+.sidebar{
+	flex-basis: 30%;
+	margin-left: 10px;
+	min-width: 10%;
+}
+.catchcopy {
+	color: #fff;
+	position: absolute;
+	top: 300px;
+	right: 300px;
+	font-size: 30px;
+	font-weight: 200;
+	line-height: 33px;
+	letter-spacing: 3px;
+	z-index: 2;
+	display: inline;
+}
 .wrapper {
 	display: flex;
 	/*max-width: 940px;*/
@@ -30,6 +47,7 @@
 }
 .pic-pc{
 	position: relative;
+	left: 190px;
 	width: 500px;
 	height: 500px;
 }
@@ -96,16 +114,13 @@
 }
 @media screen and (min-width: 768px) {
 	/*PC*/
-	img[src$="../pic/sigre.png"]{
-		position: relative;
-		width: 100px;
-		height: 100px;
-	}
+	
 }
 @media screen and (max-width: 767px) {
 	/*iphone*/
 	.pic-pc{
 		position: relative;
+		left: 60px;
 		width: 180px;
 		height: 180px;
 	}
@@ -114,6 +129,7 @@
 	/*（ここにタブレット用スタイルを記述）*/
 	.pic-pc{
 		position: relative;
+		left: 90px;
 		width: 300px;
 		height: 300px;
 	}
