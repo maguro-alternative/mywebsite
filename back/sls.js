@@ -29,4 +29,4 @@ class SpotLightShape extends createjs.Shape {
           .endFill();
       }
     }
-  }
+}

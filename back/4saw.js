@@ -51,4 +51,4 @@ window.addEventListener('DOMContentLoaded', () => {
       this.stageOverlay.canvas.width = innerWidth;
       this.stageOverlay.canvas.height = innerHeight;
     }
-  }
+}
