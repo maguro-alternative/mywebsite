@@ -1,0 +1,151 @@
+@charset "utf-8";
+.link {
+	width: 95%;
+	margin: 0 auto;
+}
+/*記事一覧の大枠*/
+.link-table {
+	width: 90%;
+	margin: 70px auto 0;
+}
+.small {
+	font-size: 14px;
+}
+/*記事のリンクブロックの大きさ*/
+.link-item {
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	text-decoration: none;
+	background-color: #fff;
+	border-style: solid;
+	border: 3px solid #999;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding: 42px 42px;
+	min-width: 80%;
+	color: #000;
+}
+.link-item a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 90%;
+    min-height: 100%;
+}
+.link-item h3 {
+	position: absolute;
+	top: 0;
+    left: 35%;
+    min-width: 80%;
+    min-height: 100%;
+}
+.link-item p {
+	position: absolute;
+	top: 25px;
+    left: 35%;
+    min-width: 80%;
+    min-height: 100%;
+}
+.link-item:hover{
+	opacity: 0.95;
+}
+.list-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: aliceblue;
+    width: 100%;
+    margin: 10px auto;
+    padding: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+.pagination{
+	position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+.list-group-item {
+    background: burlywood;
+    margin: 10px;
+    padding: 10px;
+    width: 45%;
+}
+
+.pagination li{
+	background-color: aquamarine;
+    margin: 5px;
+    border: 3px solid #333;
+}
+
+.pagination a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding: 20px;
+}
+
+.pagination a:hover{
+    background-color: #333;
+    color: aliceblue;
+}
+
+.page.active{
+    background-color: burlywood;
+}
+
+.kigi1{
+	position:absolute;
+	left:60px;
+	top:0px;
+	width: 85px;
+	height: 85px;
+}
+	
+@media screen and (max-width: 767px) {
+	.link-item h3{
+		font-size: 5px;
+		left: 200px;
+		max-width: 50%;
+		min-height: 100%;
+	}
+	.link-item p{
+		font-size: 5px;
+		left: 200px;
+		max-width: 50%;
+		min-height: 100%;
+	}
+	.link-item a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 50%;
+		min-height: 100%;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 1280px) {
+	.link-item h3{
+		font-size: 5px;
+		left: 200px;
+		max-width: 50%;
+		min-height: 100%;
+	}
+	.link-item p{
+		font-size: 5px;
+		left: 200px;
+		max-width: 50%;
+		min-height: 100%;
+	}
+	.link-item a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		max-width: 50%;
+		min-height: 100%;
+	}
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+    <link rel="stylesheet" href="../css/textback.css">
+    <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../back/paginathing.min.js"></script> 
+    <script defer src="../back/sls.js"></script>
+    <script defer src="../back/ws.js"></script>
+    <script defer src="../back/4saw.js"></script>
+    
+    <link rel="stylesheet" href="../css/link.css">
+    <title>test site</title>
+</head>
+<body>
+    <div id="bg">
+        <canvas id="canvasOverlay"></canvas>
+        <div class="container">
+            <header>
+                <nav class="global-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html">トップ</a></li>
+                        <li class="nav-item"><a href="list.html">記事一覧</a></li>
+                        <li class="nav-item"><a href="pro.html">自己紹介</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="link-table">
+            <tbody>
+                <tr>
+                    <div class="link-item">
+                        <a href="linebot.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/LINE_Icon.png">
+                            <h3>作ったLINEbot</h3>
+                            <p>大学1年の時に暇つぶしで作りました。<br></p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="into.html" style="animation: fadeIn 1s;">
+                            <!--<img src="../pic/sigre.png"--> 
+                            <h3>joy-conのHD振動研究成果</h3>
+                            <p>私個人で研究しているJoy-Conの成果です。<br></p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="into.html" style="animation: fadeIn 1s;">
+                            <h3>joy-conのHD振動研究成果</h3>
+                            <p>私個人で研究しているJoy-Conの成果です。<br></p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="into.html" style="animation: fadeIn 1s;">
+                            <!--<img src="../pic/sigre.png"--> 
+                            <h3>joy-conのHD振動研究成果</h3>
+                            <p>私個人で研究しているJoy-Conの成果です。<br></p>
+                        </a>
+                    </div>
+                </tr>
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('.link-table').paginathing({
+                    perPage: 3,
+                    firstLast: true,
+                    prevText:'prev' ,
+                    nextText:'next' ,
+                    activeClass: 'active'
+                })
+            });
+        </script>
+    </div>
+</section>
+</body>
+</html>
