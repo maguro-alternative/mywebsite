@@ -138,7 +138,10 @@ ul li:hover{
 	hsl(175, 40%, 40%));
 	animation: AnimationName 10s ease infinite;
 }
-
+.sumaho{
+	width: 170px;
+	height: 320px;
+}
 @keyframes AnimationName {
 	0% {
 		/*background-position: bottom right;*/
@@ -170,6 +173,10 @@ ul li:hover{
 		width: 180px;
 		height: 180px;
 	}
+	.sumaho{
+		width: 80px;
+		height: 140px;
+	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
 	/*（ここにタブレット用スタイルを記述）*/
@@ -178,5 +185,9 @@ ul li:hover{
 		left: 90px;
 		width: 300px;
 		height: 300px;
+	}
+	.sumaho{
+		width: 120px;
+		height: 220px;
 	}
 }
