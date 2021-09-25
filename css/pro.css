@@ -44,7 +44,25 @@
 		height: 200px;
 	}
 }
-@media only screen and (min-width: 767px) and (max-width: 1280px) {
+@media only screen and (min-width: 1281px) and (max-width: 2560px) {
 	/*（ここにタブレット用スタイルを記述）*/
-	
+	.proback{
+		background: #fff;
+		min-width: 40%;
+		padding: 20px;
+		border: 5px solid #999;
+		border-radius: 10px;
+		line-height: 1.8rem;
+	}
+	.probar{
+		margin-top: 100px;
+		margin-left: 10%;
+		flex-basis: 40%;
+	}
+	.pic-pro{
+		margin-top: 100px;
+		margin-left: 20%;
+		width: 200px;
+		height: 200px;
+	}
 }
