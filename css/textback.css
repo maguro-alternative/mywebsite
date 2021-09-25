@@ -85,7 +85,7 @@ ul li:hover{
 	text-align: center;
 	background-image: url("../pic/sigre.png");
 	width: 1000px;
-    	height: 1000px;
+    height: 1000px;
 	margin: 20px;
 	position: relative;
 	border-radius: 10px;
@@ -178,7 +178,7 @@ ul li:hover{
 	}
 	.mainbar{
 		flex-basis: 60%;
-		margin-left: 10px;
+		margin-left: 5px;
 		min-width: 65%;
 	}
 	.sidebar{
