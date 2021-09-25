@@ -8,13 +8,12 @@
 }
 .probar{
 	margin-top: 100px;
-	margin-left: 30%;
+	margin-left: 10%;
 	flex-basis: 20%;
 }
 .pic-pro{
-	position: relative;
-	top: 100px;
-	left: 500px;
+	margin-top: 100px;
+	margin-left: 500px;
 	width: 300px;
 	height: 300px;
 }
@@ -22,4 +21,30 @@
 	display: flex;
 	position: relative;
 	flex-wrap: nowrap;
+}
+@media screen and (min-width: 400px) and (max-width: 1280px) {
+	/*iphone*/
+	.proback{
+		background: #fff;
+		min-width: 40%;
+		padding: 20px;
+		border: 5px solid #999;
+		border-radius: 10px;
+		line-height: 1.8rem;
+	}
+	.probar{
+		margin-top: 100px;
+		margin-left: 20%;
+		flex-basis: 20%;
+	}
+	.pic-pro{
+		margin-top: 100px;
+		margin-left: 10%;
+		width: 200px;
+		height: 200px;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 1280px) {
+	/*（ここにタブレット用スタイルを記述）*/
+	
 }
