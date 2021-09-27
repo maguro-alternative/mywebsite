@@ -16,6 +16,11 @@
 	margin-left: 10px;
 	min-width: 10%;
 }
+.topbar{
+	
+	margin-left: 10%;
+	flex-basis: 20%;
+}
 .container {
 	max-width: 900px;
 	/*max-width: 480px;*/
@@ -78,6 +83,11 @@ ul li:hover{
 	display: flex;
 	/*max-width: 940px;*/
 	justify-content: space-around;
+	position: relative;
+	flex-wrap: nowrap;
+}
+.topwrapper {
+	display: flex;
 	position: relative;
 	flex-wrap: nowrap;
 }
