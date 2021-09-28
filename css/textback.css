@@ -17,8 +17,9 @@
 	min-width: 10%;
 }
 .topbar{
-	
+	margin-right: 30%;
 	margin-left: 10%;
+	margin-bottom: 1%;
 	flex-basis: 20%;
 }
 .container {
@@ -87,7 +88,7 @@ ul li:hover{
 	flex-wrap: nowrap;
 }
 .topwrapper {
-	display: flex;
+	display: block;
 	position: relative;
 	flex-wrap: nowrap;
 }
