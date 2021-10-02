@@ -207,6 +207,10 @@ ul li:hover{
 		margin-bottom: 1%;
 		flex-basis: 20%;
 	}
+	.dislive{
+		width: 400px;
+		height: 170px;
+	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
 	/*（ここにタブレット用スタイルを記述）*/
