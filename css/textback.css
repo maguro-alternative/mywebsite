@@ -49,6 +49,11 @@
 	position: fixed;
 	font-size: 13px;
 }
+.listside{
+	font-size: 5px;
+	list-style: none;
+	margin-left: 15px;
+}
 .global-nav {
 	font-size: 18px;
 	width: 940px;
