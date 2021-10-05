@@ -113,6 +113,10 @@ ul li:hover{
 	width: 500px;
 	height: 500px;
 }
+.cpdl{
+	width: 800px;
+	height: 650px;
+}
 #ba{
 	background-color: rgb(60, 175, 37);
 	position: absolute;
@@ -215,6 +219,10 @@ ul li:hover{
 	.dislive{
 		width: 560px;
 		height: 120px;
+	}
+	.cpdl{
+		width: 600px;
+		height: 320px;
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
