@@ -94,9 +94,9 @@ ul li:hover{
 }
 .disgetbot{
 	position: relative;
-	margin-left: 40%;
-	width: 300px;
-    height: 500px;
+	margin-left: 10%;
+	height: 300px; 
+	width: 100%;
 }
 .flex-video {
 	width: 900px;
