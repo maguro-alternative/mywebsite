@@ -95,17 +95,16 @@ ul li:hover{
 .disgetbot{
 	position: relative;
 	margin-left: 10%;
-	height: 300px; 
-	width: 100px;
+	margin-top: 10px;
+	height: 550px; 
+	width: 300px;
 }
 .flex-video {
 	width: 900px;
     height: 540px;
-	margin-left: 5%;
-    margin-bottom: 1rem;
+	margin-top: 10px;
+	margin-left: 10%;
     overflow: hidden;
-    padding-bottom: 10%;
-    padding-top: 1.5625rem;
     position: relative
 }
 .topwrapper {
