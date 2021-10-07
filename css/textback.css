@@ -92,6 +92,12 @@ ul li:hover{
 	position: relative;
 	flex-wrap: nowrap;
 }
+.disgetbot{
+	position: relative;
+	margin-left: 20%;
+	width: 1200px;
+    height: 800px;
+}
 .topwrapper {
 	display: block;
 	position: relative;
@@ -223,6 +229,12 @@ ul li:hover{
 	.cpdl{
 		width: 600px;
 		height: 320px;
+	}
+	.disgetbot{
+		position: relative;
+		margin-left: 40%;
+		width: 400px;
+		height: 300px;
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
