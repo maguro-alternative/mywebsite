@@ -98,6 +98,14 @@ ul li:hover{
 	width: 300px;
     height: 500px;
 }
+.flex-video {
+    height: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    padding-bottom: 67.5%;
+    padding-top: 1.5625rem;
+    position: relative
+}
 .topwrapper {
 	display: block;
 	position: relative;
