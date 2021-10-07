@@ -99,10 +99,12 @@ ul li:hover{
     height: 500px;
 }
 .flex-video {
-    height: 0;
+	width: 900px;
+    height: 540px;
+	margin-left: 10%;
     margin-bottom: 1rem;
     overflow: hidden;
-    padding-bottom: 67.5%;
+    padding-bottom: 30%;
     padding-top: 1.5625rem;
     position: relative
 }
@@ -243,6 +245,16 @@ ul li:hover{
 		margin-left: 40%;
 		width: 300px;
 		height: 500px;
+	}
+	.flex-video {
+		width: 300px;
+		height: 400px;
+		margin-left: 10%;
+		margin-bottom: 1rem;
+		overflow: hidden;
+		padding-bottom: 30%;
+		padding-top: 1.5625rem;
+		position: relative
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
