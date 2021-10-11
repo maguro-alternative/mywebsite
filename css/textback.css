@@ -11,6 +11,11 @@
 	margin-left: 140px;
 	min-width: 65%;
 }
+.topmainbar{
+	flex-basis: 60%;
+	margin-left: 0px;
+	min-width: 65%;
+}
 .sidebar{
 	flex-basis: 30%;
 	margin-left: 10px;
