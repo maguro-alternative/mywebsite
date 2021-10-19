@@ -41,9 +41,17 @@
                 <div class="topbar">
                     <div class="textback">
                         <h1>DiscordAPIで遊ぶ話。</h1>
-                        <script>
-                            document.write( "最終更新日：" + document.lastModified );
-                        </script>
+                        <time id="modify"></time>
+<script>
+/* 更新日の取得 */
+const last = new Date(document.lastModified);
+const year = last.getFullYear();
+const month = last.getMonth() + 1;
+const date = last.getDate();
+/* 日付を書き換える */
+const target = document.getElementById('modify');
+target.textContent = year + '-' + month + '-' + date;
+</script>
                     </div>
                 </div>
                 <div class="wrapper">
