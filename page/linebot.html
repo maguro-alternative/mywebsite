@@ -50,6 +50,41 @@
                         友人たちとよくカラオケに行くのですが、何を歌うか迷ったり、歌詞を忘れたりすることありませんか？<br>
                         少なくとも私たちの間ではよくあります。<br>
                         そこで曲のデータベースを作成し、選曲、歌詞表示をしてくれるbotを開発しようと思ったのがきっかけです。<br>
+                        <script type="text/javascript">
+                            getUpdate('index.html');
+                            //ファイルの更新日を取得
+                            function getUpdate(fileName) {
+                            var obj = createRequest();
+                            if (obj) {
+                            obj.open("get",fileName);
+                            obj.onreadystatechange = function() {
+                            if (obj.readyState == 4 && obj.status == 200) {
+                            var date = new Date(obj.getResponseHeader("lastmodified"));
+                            document.getElementById("view").innerHTML =
+                            + date.getFullYear()
+                            + "/"
+                            + (date.getMonth() + 1)
+                            + "/" + date.getDate()
+                            + " " + date.getHours()
+                            + ":" + date.getMinutes();
+                            }
+                            }
+                            obj.send(null);
+                            }
+                            }
+                            function createRequest() {
+                            try {
+                            return new XMLHttpRequest();
+                            } catch (e) {
+                            try {
+                            return new ActiveXObject("Microsoft.XMLHTTP");
+                            } catch (e) {
+                            return null;
+                            }
+                            }
+                            return null;
+                            }
+                            </script>
                         &copy;LINE株式会社/&copy:Google<br>
                     </div>
                 </div>
