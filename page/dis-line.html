@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="../pic/sigre.png">
+        <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+        <link rel="stylesheet" href="../css/textback.css">
+        <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../back/paginathing.min.js"></script> 
+        <script defer src="../back/sls.js"></script>
+        <script defer src="../back/ws.js"></script>
+        <script defer src="../back/4saw.js"></script>
+        <link rel="stylesheet" href="../css/link.css">
+        <title>完成！！！DiscordとLINEのメッセージ連携！</title>
+        <meta property="og:title" content="LINEと比較したDiscord。">
+        <meta property="og:url" content="https://sigumaguro-5second.netlify.app/">
+        <meta property="og:image" content="https://sigumaguro-5second.netlify.app/pic/discordicon.jpg">
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="Discord-LINE間でのメッセージ連携できました。" /> 
+        <meta property="og:site_name" content="時雨【5秒のサーバー】 ポータルサイト" /> 
+    </head>
+    <body>
+        <div id="ba">
+            <div id="bg"></div>
+            <canvas id="canvasOverlay"></canvas>
+            <div class="container">
+                <header>
+                    <nav class="global-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="../index.html">トップ</a></li>
+                            <li class="nav-item"><a href="list.html">記事一覧</a></li>
+                            <li class="nav-item"><a href="pro.html">メンバー紹介</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <br><br><br><br>
+            </div>
+            <div class="topwrapper">
+                <div class="topbar">
+                    <div class="textback">
+                        <h1>完成！！！DiscordとLINEのメッセージ連携！</h1>
+                        更新日 2021/11/16
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="mainbar">
+                        <div class="textback">
+                            <h1><a id="con1">作るきっかけ</a></h1>
+
+                            いままで散々プッシュしてきたメッセージアプリ「Discord」。<br>
+                            コミュニティは大盛況ですが、人数も結構増えたため容易に通知を飛ばすことがしづらくなりました。<br>
+                            うちのサーバー設定ではメンションを送らないと通知が行かないようになっていますが、それでは普通のメッセージも取り逃がす、、、<br>
+                            PCユーザーが少ないため、オンライン率も少なめ、、、<br>
+                            そんなジレンマを抱えました。<br>
+                            これはどうにかしたい！！！LINEとDiscordのAPIを使用した私にある考えが浮かびました。<br>
+                            それは<b>「LINEとDiscordをAPIでつなげてみよう！！」</b>という考えです。<br>
+                            
+                            <h1><a id="con2">できること</a></h1>
+
+                            <h2><a id="con2-1">LINE-Discord間のメッセージのやり取り</a></h2>
+
+                            画像のようにDiscordのメッセージがLINEに、LINEのメッセージがDiscordへと転送されます。<br>
+                            一枚だけですが画像も扱えます。スタンプは無理です。あきらめてください。<br>
+                            ちなみにgifはLINEの影響でjpgに変換されます。<br>
+
+                            <h2><a id="con2-2">プッシュ上限対策、および警告</a></h2>
+
+                            LINEAPIは送れるメッセージに制限があり、月に1000件を超えるとそれ以上は送れなくなります。<br>
+                            そこで1日ごとにメッセージの上限を定め、それを超えそうになると警告メッセージをDiscordに送信します。<br>
+
+                            <h2><a id="con3">終わりに</a></h2>
+                            今回はただの完成報告なので、作り方は書きません。<br>
+                            多分そのうち書きます。<br>
+
+                        </div>
+                    </div>
+                <div class="sidebar">
+                    <div class="listback">
+                        <li><a href="#con1">作るきっかけ</a></li>
+                        <li><a href="#con2">できること</a></li>
+                        <div class="listside"><li><a href="#con2-1">LINE-Discord間のメッセージのやり取り</a></li></div>
+                        <div class="listside"><li><a href="#con2-2">プッシュ上限対策、および警告</a></li></div>
+                        <li><a href="#con3">終わりに</a></li>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>
