@@ -32,6 +32,7 @@
 	/*max-width: 480px;*/
 	margin: 0 auto;
 }
+/*トップの5secondの位置*/
 .catchcopy {
 	color: #fff;
 	position: absolute;
@@ -90,6 +91,7 @@ ul.nav-list{
 ul li:hover{
 	background-color: #FFF2CC;
 }
+/*記事で使うテキストボックス*/
 .wrapper {
 	display: flex;
 	/*max-width: 940px;*/
@@ -97,6 +99,7 @@ ul li:hover{
 	position: relative;
 	flex-wrap: nowrap;
 }
+/*トップのアクティブ状況のサイズのクラス*/
 .disgetbot{
 	position: relative;
 	margin-left: 3%;
@@ -104,6 +107,7 @@ ul li:hover{
 	height: 550px; 
 	width: 400px;
 }
+/*動画のサイズのクラス*/
 .flex-video {
 	width: 900px;
     height: 540px;
@@ -112,11 +116,13 @@ ul li:hover{
     overflow: hidden;
     position: relative
 }
+/*トップのテキストボックス*/
 .topwrapper {
 	display: block;
 	position: relative;
 	flex-wrap: nowrap;
 }
+/*トップ画の位置*/
 .top-image {
 	text-align: center;
 	background-image: url("../pic/sigre.png");
@@ -127,12 +133,14 @@ ul li:hover{
 	border-radius: 10px;
 	animation: fadeIn 1s;
 }
+/*PCキャプチャの画像クラス*/
 .pic-pc{
 	position: relative;
 	left: 190px;
 	width: 500px;
 	height: 500px;
 }
+/*customRPのDL画面の画像*/
 .cpdl{
 	width: 800px;
 	height: 500px;
@@ -177,18 +185,26 @@ ul li:hover{
 	hsl(175, 40%, 40%));
 	animation: AnimationName 10s ease infinite;
 }
+/*スマホのスクショ画像*/
 .sumaho{
 	width: 170px;
 	height: 320px;
 }
+/*画面共有の通知の画像*/
 .dislive{
 	width: 750px;
 	height: 140px;
 }
+/*更新情報のサイズ*/
 .embedup {
 	top: 70px;
 	width: 600px;
 	height: 200px;
+}
+/*discord-lineの画像*/
+.lineren{
+	width: 250px;
+	height: 600px;
 }
 @keyframes AnimationName {
 	0% {
@@ -281,6 +297,10 @@ ul li:hover{
 		top: 50px;
 		width: 400px;
 		height: 200px;
+	}
+	.lineren{
+		width: 200px;
+		height: 500px;
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
