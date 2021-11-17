@@ -97,7 +97,7 @@ ul li:hover{
 	/*max-width: 940px;*/
 	justify-content: space-around;
 	position: relative;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 }
 /*トップのアクティブ状況のサイズのクラス*/
 .disgetbot{
@@ -109,8 +109,8 @@ ul li:hover{
 }
 /*動画のサイズのクラス*/
 .flex-video {
-	width: 900px;
-    height: 540px;
+	width: 700px;
+    height: 480px;
 	margin-top: 10px;
 	margin-left: 3%;
     overflow: hidden;
@@ -232,7 +232,6 @@ ul li:hover{
 @media screen and (min-width: 400px) and (max-width: 1280px)  {
 	/*iphone*/
 	.container {
-		min-width: 480px;
 		/*max-width: 480px;*/
 		margin: 0 auto;
 	}
@@ -245,28 +244,25 @@ ul li:hover{
 		line-height:1.8rem;
 	}
 	.wrapper {
-		/*display: flex;*/
+		display: flex;
 		/*max-width: 940px;*/
 		justify-content: space-around;
 		position: relative;
 		flex-wrap: nowrap;
 	}
 	.topwrapper {
-		min-width: 480px;
 		display: block;
 		position: relative;
 		flex-wrap: nowrap;
 	}
 	.global-nav {
 		font-size: 18px;
-		min-width: 480px;
 		background-color: #eff;
 		position: fixed;
 		z-index: 2;
 		/*width: auto;*/
 	}
 	#ba{
-		min-width: 480px;
 		background-color: rgb(60, 175, 37);
 		position: absolute;
 		top: 0;
@@ -276,7 +272,6 @@ ul li:hover{
 		overflow-y: hidden;
 	}
 	#canvasOverlay {
-		min-width: 480px;
 		min-height: 100%;
 		/*top: 0;
 		left: 0;*/
@@ -290,7 +285,6 @@ ul li:hover{
 		mix-blend-mode: hard-light;
 	}
 	#bg {
-		min-width: 480px;
 		/*position: fixed;*/
 		position: fixed;
 		top: 0;
@@ -319,11 +313,11 @@ ul li:hover{
 	}
 	/*動画のサイズのクラス*/
 	.flex-video {
-		width: 300px;
-    	height: 260px;
+		width: 200px;
+    	height: 160px;
 		margin-top: 10px;
-		margin-left: 1%;
-    	overflow: hidden;
+		/*margin-left: 1%;*/
+    	/*overflow: hidden;*/
     	/*position: relative*/
 	}
 	.pic-pc{
