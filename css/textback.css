@@ -230,14 +230,17 @@ ul li:hover{
 	
 }
 @media screen and (min-width: 400px) and (max-width: 1280px)  {
+	body{
+		font-size: 1.5rem;
+	}
 	/*iphone*/
 	.container {
 		/*max-width: 480px;*/
-		margin: 0 auto;
+		margin: 0 5%;
 	}
 	.textback {
 		background: #fff;
-		min-width: 70%;
+		min-width: 90%;
 		padding: 20px;
 		border: 5px solid #999;
 		border-radius: 10px;
@@ -245,15 +248,15 @@ ul li:hover{
 	}
 	.wrapper {
 		display: flex;
-		/*max-width: 940px;*/
-		justify-content: space-around;
+		min-width: 940px;
+		/*justify-content: space-around;*/
 		position: relative;
-		flex-wrap: nowrap;
+		/*flex-wrap: nowrap;*/
 	}
 	.topwrapper {
 		display: block;
 		position: relative;
-		flex-wrap: nowrap;
+		/*flex-wrap: nowrap;*/
 	}
 	.global-nav {
 		font-size: 18px;
@@ -303,23 +306,6 @@ ul li:hover{
 		hsl(175, 40%, 40%));
 		animation: AnimationName 10s ease infinite;
 	}
-	/*トップのアクティブ状況のサイズのクラス*/
-	.disgetbot{
-		position: relative;
-		margin-left: 1%;
-		margin-top: 10px;
-		height: 400px; 
-		width: 300px;
-	}
-	/*動画のサイズのクラス*/
-	.flex-video {
-		width: 200px;
-    	height: 160px;
-		margin-top: 10px;
-		/*margin-left: 1%;*/
-    	/*overflow: hidden;*/
-    	/*position: relative*/
-	}
 	.pic-pc{
 		position: relative;
 		left: 60px;
@@ -327,13 +313,13 @@ ul li:hover{
 		height: 180px;
 	}
 	.sumaho{
-		width: 80px;
-		height: 140px;
+		width: 400px;
+		height: 700px;
 	}
 	.mainbar{
 		flex-basis: 80%;
 		margin-left: 3%;
-		min-width: 85%;
+		max-width: 85%;
 	}
 	.sidebar{
 		display: none;
@@ -341,8 +327,13 @@ ul li:hover{
 		margin-left: 10px;
 		min-width: 10%;
 	}
+	.topmainbar{
+		flex-basis: 60%;
+		margin-left: 0px;
+		min-width: 80%;
+	}
 	.topbar{
-		margin-right: 25%;
+		margin-right: 10%;
 		margin-left: 10%;
 		margin-bottom: 1%;
 		flex-basis: 20%;
@@ -357,14 +348,14 @@ ul li:hover{
 	}
 	.disgetbot{
 		position: relative;
-		margin-left: 25%;
-		width: 600px;
-		height: 500px;
+		margin-left: 5%;
+		width: 500px;
+		height: 400px;
 	}
 	.flex-video {
-		width: 600px;
+		width: 500px;
 		height: 400px;
-		margin-left: 25%;
+		margin-left: 1%;
 		margin-bottom: 1rem;
 		overflow: hidden;
 		padding-bottom: 5%;
@@ -394,7 +385,7 @@ ul li:hover{
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
-	/*（ここにタブレット用スタイルを記述）*/
+	/*（ここにタブレット用スタイルを記述）
 	.pic-pc{
 		position: relative;
 		left: 90px;
@@ -404,5 +395,5 @@ ul li:hover{
 	.sumaho{
 		width: 120px;
 		height: 220px;
-	}
+	}*/
 }
