@@ -245,7 +245,7 @@ ul li:hover{
 		line-height:1.8rem;
 	}
 	.wrapper {
-		display: flex;
+		/*display: flex;*/
 		/*max-width: 940px;*/
 		justify-content: space-around;
 		position: relative;
@@ -272,8 +272,8 @@ ul li:hover{
 		top: 0;
 		left: 0;
 		/*width: 100%;*/
-		overflow-x: visible;
-		overflow-y: visible;
+		overflow-x: hidden;
+		overflow-y: hidden;
 	}
 	#canvasOverlay {
 		max-width: 480px;
@@ -283,8 +283,8 @@ ul li:hover{
 		/*width: 100%;*/
 		/*min-width:100vw;
 		min-height:100vh;*/
-		overflow-x: visible;
-		overflow-y: visible;
+		overflow-x: hidden;
+		overflow-y: hidden;
 		position: fixed;
 		/*position: fixed;*/
 		mix-blend-mode: hard-light;
@@ -312,7 +312,7 @@ ul li:hover{
 	/*トップのアクティブ状況のサイズのクラス*/
 	.disgetbot{
 		position: relative;
-		margin-left: 3%;
+		margin-left: 1%;
 		margin-top: 10px;
 		height: 450px; 
 		width: 300px;
@@ -322,9 +322,9 @@ ul li:hover{
 		width: 480px;
     	height: 260px;
 		margin-top: 10px;
-		margin-left: 10%;
+		margin-left: 1%;
     	overflow: hidden;
-    	position: relative
+    	/*position: relative*/
 	}
 	.pic-pc{
 		position: relative;
