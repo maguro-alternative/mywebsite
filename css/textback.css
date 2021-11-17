@@ -343,7 +343,7 @@ ul li:hover{
 		max-width: 85%;
 	}
 	.sidebar{
-		display: none;
+		/*display: none;*/
 		flex-basis: 30%;
 		margin-left: 10px;
 		min-width: 10%;
