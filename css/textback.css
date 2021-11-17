@@ -232,7 +232,7 @@ ul li:hover{
 @media screen and (min-width: 400px) and (max-width: 1280px)  {
 	/*iphone*/
 	.container {
-		max-width: 480px;
+		min-width: 480px;
 		/*max-width: 480px;*/
 		margin: 0 auto;
 	}
@@ -252,21 +252,21 @@ ul li:hover{
 		flex-wrap: nowrap;
 	}
 	.topwrapper {
-		max-width: 480px;
+		min-width: 480px;
 		display: block;
 		position: relative;
 		flex-wrap: nowrap;
 	}
 	.global-nav {
 		font-size: 18px;
-		width: 480px;
+		min-width: 480px;
 		background-color: #eff;
 		position: fixed;
 		z-index: 2;
 		/*width: auto;*/
 	}
 	#ba{
-		max-width: 480px;
+		min-width: 480px;
 		background-color: rgb(60, 175, 37);
 		position: absolute;
 		top: 0;
@@ -276,7 +276,7 @@ ul li:hover{
 		overflow-y: hidden;
 	}
 	#canvasOverlay {
-		max-width: 480px;
+		min-width: 480px;
 		min-height: 100%;
 		/*top: 0;
 		left: 0;*/
@@ -290,7 +290,7 @@ ul li:hover{
 		mix-blend-mode: hard-light;
 	}
 	#bg {
-		max-width: 480px;
+		min-width: 480px;
 		/*position: fixed;*/
 		position: fixed;
 		top: 0;
@@ -314,12 +314,12 @@ ul li:hover{
 		position: relative;
 		margin-left: 1%;
 		margin-top: 10px;
-		height: 450px; 
+		height: 400px; 
 		width: 300px;
 	}
 	/*動画のサイズのクラス*/
 	.flex-video {
-		width: 480px;
+		width: 300px;
     	height: 260px;
 		margin-top: 10px;
 		margin-left: 1%;
