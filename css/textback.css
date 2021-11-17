@@ -203,8 +203,8 @@ ul li:hover{
 }
 /*discord-lineの画像*/
 .lineren{
-	width: 250px;
-	height: 600px;
+	width: 600px;
+	height: 250px;
 }
 @keyframes AnimationName {
 	0% {
@@ -299,8 +299,8 @@ ul li:hover{
 		height: 200px;
 	}
 	.lineren{
-		width: 200px;
-		height: 500px;
+		width: 500px;
+		height: 200px;
 	}
 }
 @media only screen and (min-width: 767px) and (max-width: 1280px) {
