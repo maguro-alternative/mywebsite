@@ -263,7 +263,28 @@ ul li:hover{
 		background-color: #eff;
 		position: fixed;
 		z-index: 2;
-		/*width: auto;*/
+		width: 900px;
+		height: 100px;
+	}
+	ul.nav-list{
+		display: table;
+		margin: 0 auto;
+		padding: 0;
+		width: 80%;	
+		text-align: center;
+		position: relative;
+	}
+	.nav-list li{
+		display: table-cell;
+		min-width: 50px;
+	}
+	.nav-list a{
+		display: block;
+		width: 100%;
+		padding: 10px 0;
+		text-decoration: none;
+		color: #555;
+		font-weight: bold;
 	}
 	#ba{
 		background-color: rgb(60, 175, 37);
