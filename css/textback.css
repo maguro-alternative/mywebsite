@@ -255,7 +255,6 @@ ul li:hover{
 	}
 	.topwrapper {
 		display: block;
-		min-width: 640px;
 		position: relative;
 		/*flex-wrap: nowrap;*/
 	}
@@ -355,7 +354,7 @@ ul li:hover{
 	}
 	.topbar{
 		margin-right: 10%;
-		margin-left: 1%;
+		margin-left: 10%;
 		margin-bottom: 1%;
 		flex-basis: 20%;
 	}
