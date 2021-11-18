@@ -231,7 +231,7 @@ ul li:hover{
 }
 @media screen and (min-width: 320px) and (max-width: 1280px)  {
 	body{
-		font-size: 1.5rem;
+		font-size: 1.1rem;
 	}
 	/*iphone*/
 	.container {
