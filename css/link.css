@@ -164,13 +164,13 @@
 	.link-item h3{
 		font-size: 16px;
 		left: 200px;
-		min-width: 80%;
+		min-width: 70%;
 		min-height: 100%;
 	}
 	.link-item p{
 		font-size: 13px;
 		left: 200px;
-		min-width: 50%;
+		min-width: 60%;
 		min-height: 100%;
 	}
 	.link-item a {
