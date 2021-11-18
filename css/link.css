@@ -157,20 +157,35 @@
 	}
 }
 @media screen and (min-width: 320px) and (max-width: 768px)  {
+	/*記事のリンクブロックの大きさ*/
+	.link-item {
+		display: inline-block;
+		position: relative;
+		text-align: left;
+		text-decoration: none;
+		background-color: #fff;
+		border-style: solid;
+		border: 3px solid #999;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding: 42px 42px;
+		min-width: 70%;
+		color: #000;
+	}
 	.link-table {
 		width: 90%;
 		margin: 70px auto 0;
 	}
 	.link-item h3{
 		font-size: 16px;
-		left: 200px;
-		min-width: 70%;
+		left: 140px;
+		min-width: 80%;
 		min-height: 100%;
 	}
 	.link-item p{
 		font-size: 13px;
-		left: 200px;
-		min-width: 60%;
+		left: 140px;
+		min-width: 80%;
 		min-height: 100%;
 	}
 	.link-item a {
@@ -182,7 +197,7 @@
 	}
 	.kigi1{
 		position:absolute;
-		left:60px;
+		left:30px;
 		top:0px;
 		width: 85px;
 		height: 85px;
