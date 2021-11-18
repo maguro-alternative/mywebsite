@@ -264,7 +264,6 @@ ul li:hover{
 		position: fixed;
 		z-index: 2;
 		width: 900px;
-		height: 100px;
 	}
 	ul.nav-list{
 		display: table;
