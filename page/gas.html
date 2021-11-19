@@ -14,7 +14,7 @@
         <script defer src="../back/ws.js"></script>
         <script defer src="../back/4saw.js"></script>
         <link rel="stylesheet" href="../css/link.css">
-        <title>DiscordAPIで遊ぶ話。</title>
+        <title>LINEとDiscordの連携の作り方</title>
         <meta property="og:title" content="LINEとDiscordの連携の作り方">
         <meta property="og:url" content="https://sigumaguro-5second.netlify.app/">
         <meta property="og:image" content="https://sigumaguro-5second.netlify.app/pic/discordicon.jpg">
@@ -57,12 +57,45 @@
                             src="https://hatenablog-parts.com/embed?url=https://sigumaguro-5second.netlify.app/page/dis-line.html" 
                             width="300" height="150" frameborder="0" scrolling="no">
                             </iframe>
+                            <h1><a id="con2">使うもの</a></h1>
+                            <b>Google Apps Script(通称GAS)</b><br>
+                            ・Googleが提供するアプリ開発用プラットホーム。いろんなことできます。<br>
+                            　httpリクエスト特化で使用します。<br>
+                            <b>Glitch</b><br>
+                            ・こちらもアプリ開発用のプラットホーム。Webアプリを作成できます。<br>
+                            　APIを利用します。<br>
+                            <b>Gyazo</b><br>
+                            ・限定公開（URLを知らないと見れない）形式で画像を送信できるWebサービス。容量無制限かつAPIあり。<br>
+                            　LINEからDiscordへ画像を送信する際に使用します。<br>
+                            <b>Discord.js</b><br>
+                            ・Discordをプログラムで扱えるようにするもの。<br>
+                            <b>LINE Messageing API</b><br>
+                            ・同じくLINEをプログラムで扱えるようにするもの。<br>
+                            ここにあるやつはすべてタダで利用できます。<br>
+                            <h1><a id="con3">全体図</a></h1>
+                            <h2><a id="con3-1">LINEからDiscordへ</a></h2>
+                            <img class="dislive" src="../pic/d-bot.JPG"><br>
+                            一方通行です。<br>
+                            1,GASでLINEからのメッセージを監視。<br>
+                            2,メッセージが来た場合、内容を受け取り、Webhookの形式でDiscordに送信。<br>
+                            <h2><a id="con3-1">DiscordからLINEへ</a></h2>
+                            <img class="dislive" src="../pic/l-bot.JPG"><br>
+                            ちょっと複雑です。<br>
+                            1,GASでGlitchへリクエストを送信→24時間稼働させ、Discordからのメッセージを監視する。<br>
+                            2,Discordからメッセージが来た場合、Glitchが受け取る。<br>
+                            3,GlitchでGASが扱える形式に変換し、GASに送信。<br>
+                            4,GASがメッセージをLINEの形式に変換し、LINEへ送信する。<br>
+                            <h2><a id="con4">下準備</a></h2>
+                            下準備として、LINEbot、Discordbot、DiscordWebhookを取得しましょう。<br>
                         </div>
                     </div>
                 <div class="sidebar">
                     <div class="listback">
                         <li><a href="#con1">概要</a></li>
-                        <li><a href="#con2">discordbot</a></li>
+                        <li><a href="#con2">使うもの</a></li>
+                        <li><a href="#con3">全体図</a></li>
+                        <div class="listside"><li><a href="#con3-1">LINEからDiscordへ</a></li></div>
+                        <div class="listside"><li><a href="#con3-2">DiscordからLINEへ</a></li></div>
                     </div>
                 </div> 
             </div>
