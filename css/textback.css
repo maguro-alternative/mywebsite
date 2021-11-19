@@ -192,8 +192,10 @@ ul li:hover{
 }
 /*画面共有の通知の画像*/
 .dislive{
-	width: 750px;
-	height: 140px;
+	/*width: 750px;
+	height: 140px;*/
+	width: 60%;
+	height: 60%;
 }
 /*更新情報のサイズ*/
 .embedup {
