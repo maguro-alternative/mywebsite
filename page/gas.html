@@ -94,6 +94,8 @@
                             <h2><a id="con3-4">Glitchの役割</a></h2>
                             ・Discordからメッセージを受け取り、GASを経由してLINEに送信。<br>
                             ・Discordから画像が送られてきた場合、そのURLを取得して送信。<br>
+                            <h2><a id="con3-5">Gyazoの役割</a></h2>
+                            ・LINEから送られてきた画像（バイナリデータ）をjpgに変換し、URLを取得する。<br>
                             <h1><a id="con4">下準備</a></h1>
                             下準備として、LINEbot、Discordbot、DiscordWebhook、gyazoAPIを取得しましょう。<br>
                             LINEbot(控えるもの：アクセストークン)<br>
@@ -146,7 +148,7 @@
                             <h2><a id="con5-2">ウェブアプリケーションとして実装</a></h2>
                             メニューバーの公開からウェブアプリケーションとして公開を選択します。<br>
                             <img src="../pic/apps.JPG"><br>
-                            <img src="../pic/gweb.JPG"><br>
+                            <img class="dislive" src="../pic/gweb.JPG"><br>
                             プロジェクトバージョンは常にnew、実行ユーザーはme(自分のGmailアドレス)、アクセスできるユーザーはAnyone, even anonymousで更新します。<br>
                             <img class="dislive" src="../pic/wer.JPG"><br>
                             初回時に更新すると警告が表示されますが、無視して承認しましょう。<br>
@@ -184,7 +186,7 @@
                             最後に24時間稼働させるためにトリガーを設定します。<br>
                             編集から現在のプロジェクトのトリガーを選択し、新規作成します。<br>
                             <img src="../pic/SDT.JPG"><br>
-                            <img src="../pic/DevilTrigger.JPG"><br>
+                            <img class="dislive" src="../pic/DevilTrigger.JPG"><br>
                             設定は上記の通りです。保存したら完成です。<br>
                             <h1><a id="con9">完成！！</a></h1>
                             試しにメッセージを送ってみましょう。<br>
@@ -253,6 +255,7 @@
                             <div class="listside"><li><a href="#con3-2">DiscordからLINEへ</a></li></div>
                             <div class="listside"><li><a href="#con3-3">GASの役割</a></li></div>
                             <div class="listside"><li><a href="#con3-4">Glitchの役割</a></li></div>
+                            <div class="listside"><li><a href="#con3-5">Gyazoの役割</a></li></div>
                             <li><a href="#con4">下準備</a></li>
                             <li><a href="#con5">gasでbot作成</a></li>
                             <div class="listside"><li><a href="#con5-1">コードを書く</a></li></div>
