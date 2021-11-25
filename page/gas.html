@@ -96,28 +96,28 @@
                             ・Discordから画像が送られてきた場合、そのURLを取得して送信。<br>
                             <h1><a id="con4">下準備</a></h1>
                             下準備として、LINEbot、Discordbot、DiscordWebhook、gyazoAPIを取得しましょう。<br>
-                            LINEbot<br>
+                            LINEbot(控えるもの：アクセストークン)<br>
                             <iframe 
                             class="hatenablogcard" 
                             style="width:100%;height:155px;max-width:680px;" 
                             title="【ブログタイトル】" 
                             src="https://hatenablog-parts.com/embed?url=https://sigumaguro-5second.netlify.app/page/linedev.html" 
                             width="300" height="150" frameborder="0" scrolling="no"></iframe>
-                            <br>Discordbot<br>
+                            <br>Discordbot(控えるもの：アクセストークン)<br>
                             <iframe 
                             class="hatenablogcard" 
                             style="width:100%;height:155px;max-width:680px;" 
                             title="【ブログタイトル】" 
                             src="https://hatenablog-parts.com/embed?url=https://discordpy.readthedocs.io/ja/latest/discord.html" 
                             width="300" height="150" frameborder="0" scrolling="no"></iframe>
-                            <br><a href="https://note.com/project_j_k/n/ndebd26cb6189#vwm3J">DiscordWebhook(直に飛べます)</a><br>
+                            <br><a href="https://note.com/project_j_k/n/ndebd26cb6189#vwm3J">DiscordWebhook(直に飛べます、控えるもの：URL)</a><br>
                             <iframe 
                             class="hatenablogcard" 
                             style="width:100%;height:155px;max-width:680px;" 
                             title="【ブログタイトル】" 
                             src="https://hatenablog-parts.com/embed?url=https://note.com/project_j_k/n/ndebd26cb6189#vwm3J" 
                             width="300" height="150" frameborder="0" scrolling="no"></iframe>
-                            <br>Gyazo(アクセストークン発行まで)<br>
+                            <br>Gyazo(控えるもの：アクセストークン)<br>
                             <iframe 
                             class="hatenablogcard" 
                             style="width:100%;height:155px;max-width:680px;" 
@@ -159,6 +159,65 @@
                             200のコードを確認した場合、成功です。次に進みます。<br>
                             <h1><a id="con6">Glitch</a></h1>
                             GlitchでDiscord側のメッセージを監視するbotを作成します。<br>
+                            Glitchに登録して、<a href="https://glitch.com/~pumped-chopper">テンプレート</a>から作成します。<br>
+                            Remix Your Ownからエディターに移動します。<br>
+                            こちらもソースコードはGitHub載せてあります。main.jsの部分を書き換えましょう。<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://github.com/maguro-alternative/line_to_discord" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe><br>
+                            main.jsだけでは動かないので.envファイルに記述します。<br>
+                            DISCORD_BOT_TOKENに取得したDiscordbotのトークンを入力します。<br>
+                            GASにリクエストを送るためGAS_URLを追加し、URLを入れます。<br>
+                            また、リクエストを送る必要があるため、requestモジュールをインストールする必要があります。<br>
+                            package.jsonを開き、Add packageでrequestと検索し、インストールしましょう。<br>
+                            これでGlitch側は完成です。<br>
+                            <h1><a id="con7">Glitch_URLの指定</a></h1>
+                            <a href="con5-1">先ほど空けておいた</a>Glitch_URLを指定します。<br>
+                            下記URLにプロジェクト名を入れ、設定します。<br>
+                            https://{Glitchプロジェクト名}.glitch.me/<br>
+                            (プロジェクト名がline-to-discordの場合、https://line-to-discord.glitch.me/)<br>
+                            追加した後、忘れずに<a href="con5-2">更新を掛けましょう。</a><br>
+                            <h1><a id="con8">トリガーの設定</a></h1>
+                            最後に24時間稼働させるためにトリガーを設定します。<br>
+                            編集から現在のプロジェクトのトリガーを選択し、新規作成します。<br>
+                            <img src="../pic/SDT.JPG"><br>
+                            <img src="../pic/DevilTrigger.JPG"><br>
+                            設定は上記の通りです。保存したら完成です。<br>
+                            <h1><a id="con9">完成！！</a></h1>
+                            試しにメッセージを送ってみましょう。<br>
+                            <img class="sumaho" src="../pic/IMG_8332.JPG">
+                            <img class="sumaho" src="../pic/IMG_8331.JPG"><br>
+                            <img class="lineren" src="../pic/lineren.JPG"><br>
+                            (前回の記事の使いまわしです、、、ごめんなさい。)<br>
+                            こんな感じに動作します。<br>
+                            <h1><a id="con10">あとがき</a></h1>
+                            結構頭抱えながら作りました。（笑）<br>
+                            本当にわからないことが多く、いちいち調べていたので実装にかなり時間がかかりました。<br>
+                            ですがウェブリクエストの勉強には大きく役立ったと思います。<br>
+                            特に画像の送受信はネットを探しても見当たらなかったので、大きな進捗ではないでしょうか。<br>
+                            ただLINEの画像をバイナリデータからGyazoに渡すので処理に若干時間がかかります。<br>
+                            そのあたりが今後の課題です。<br>
+                            <h1><a id="con11">参考リンク</a></h1>
+                            マジでお世話になりました。ありがとうございます。<br>
+                            参考リンク1<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://qiita.com/i_tatte/items/6cd8d9ce0a93df249937" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                            参考リンク2<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://torikurosu.hatenablog.com/entry/2020/12/31/020915" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
                         </div>
                     </div>
                     <div class="sidebar">
