@@ -85,6 +85,15 @@
                             2,Discordからメッセージが来た場合、Glitchが受け取る。<br>
                             3,GlitchでGASが扱える形式に変換し、GASに送信。<br>
                             4,GASがメッセージをLINEの形式に変換し、LINEへ送信する。<br>
+                            <h2><a id="con3-3">GASの役割</a></h2>
+                            ・LINEからメッセージを受け取り、Discordに送信。<br>
+                            ・5分おきにGlitch側にリクエストを送り、24時間稼働させる。<br>
+                            ・LINEから送られてきた画像をgyazoに送信し、URLを取得。それをDiscordに送信。<br>
+                            ・Discordからメッセージが送られてきた場合、Glitchからメッセージを受け取り、LINEに送信。<br>
+                            ・友達数、当月分のプッシュを確認し、一日当たりのプッシュ上限を定める。<br>
+                            <h2><a id="con3-4">Glitchの役割</a></h2>
+                            ・Discordからメッセージを受け取り、GASを経由してLINEに送信。<br>
+                            ・Discordから画像が送られてきた場合、そのURLを取得して送信。<br>
                             <h1><a id="con4">下準備</a></h1>
                             下準備として、LINEbot、Discordbot、DiscordWebhook、gyazoAPIを取得しましょう。<br>
                             LINEbot<br>
@@ -143,7 +152,13 @@
                             初回時に更新すると警告が表示されますが、無視して承認しましょう。<br>
                             <img class="dislive" src="../pic/wer2.JPG"><br>
                             <img class="dislive" src="../pic/wer3.JPG"><br>
+                            承認されるとhttps://script.google.com/ ....というURLが表示されます。<br>
+                            これをLINEbotのwebhookに登録します。<br>
+                            後述のGlitchでも使用するので控えておきましょう。<br>
+                            <img class="dislive" src="../pic/webhook.JPG"><br>
+                            200のコードを確認した場合、成功です。次に進みます。<br>
                             <h1><a id="con6">Glitch</a></h1>
+                            GlitchでDiscord側のメッセージを監視するbotを作成します。<br>
                         </div>
                     </div>
                     <div class="sidebar">
@@ -153,6 +168,8 @@
                             <li><a href="#con3">全体図</a></li>
                             <div class="listside"><li><a href="#con3-1">LINEからDiscordへ</a></li></div>
                             <div class="listside"><li><a href="#con3-2">DiscordからLINEへ</a></li></div>
+                            <div class="listside"><li><a href="#con3-3">GASの役割</a></li></div>
+                            <div class="listside"><li><a href="#con3-4">Glitchの役割</a></li></div>
                         </div>
                     </div> 
                 </div>
