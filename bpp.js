@@ -1,36 +1,18 @@
-const app = new Vue({
-  el: '#app', // Vueが管理する一番外側のDOM要素
-  data: {
-    // Vue内部で使いたい変数は全てこの中に定義する
-    name: '',
-    contents: '',
-    period: '',
-    point:'',
-    other: '',
-    OshiList: [], // これは配列
-  },
-  methods: {
-    // 関数はここ
-    addOshi: function() {
-      console.log('推しを追加したよ：', this.name, this.contents, this.period, this.point, this.other);
-      // 配列の先頭に現在のタスク内容を追加する（最後尾の場合はpush）
-//      this.OshiList.unshift(this.name, this.contents, this.period, this.point, this.other);
-        this.OshiList.unshift({name:this.name,
-                             contents:this.contents,
-                             period:this.period,
-                             point:this.point,
-                             other:this.other});
-      console.log('登録した推し一覧：', this.OshiList);
-    },
-    // 以下を追加、関数名はなんでもよい
-    delOshi: function() {
-      this.name = '';
-      this.contents ='';
-      this.period = '';
-      this.point = '';
-      this.other = '';
-      this.OshiList = [];
-      console.log('全ての推しを消したよ');
-    },
-  },
-});
+document.write(`
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=640" />
+    <link rel="icon" href="https://sigumataityouda.netlify.app/pic/zu3.png">
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://sigumataityouda.netlify.app/css/textback.css">
+    <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script defer src="https://sigumataityouda.netlify.app/back/sls.js"></script>
+    <script defer src="https://sigumataityouda.netlify.app/back/ws.js"></script>
+    <script defer src="https://sigumataityouda.netlify.app/back/4saw.js"></script>
+    <title>マグロ隊長ポータル</title>
+    <meta property="og:title" content="マグロ隊長ポータル">
+    <meta property="og:url" content="https://sigumataityouda.netlify.app/">
+    <meta property="og:image" content="https://sigumataityouda.netlify.app/pic/zu3.png">
+    <meta property="og:type" content=" website" />
+`)
