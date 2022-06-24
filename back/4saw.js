@@ -1,4 +1,4 @@
-// JavaScript source code
+
 window.addEventListener('DOMContentLoaded', () => {
     new Main();
   });

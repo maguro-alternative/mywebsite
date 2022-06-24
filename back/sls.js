@@ -1,4 +1,4 @@
-// JavaScript source code
+
 class SpotLightShape extends createjs.Shape {
 
     constructor() {

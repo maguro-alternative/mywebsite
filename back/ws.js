@@ -1,4 +1,4 @@
-// JavaScript source code
+
 /** Processing のパーリンノイズ(連続した乱数)関数へのショートカットです。 */
 let noise;
 
