@@ -1,5 +1,5 @@
 
-window.addEventListener('componentDidMount', () => {
+window.addEventListener('DOMContentLoaded', () => {
     new Main();
   });
   
