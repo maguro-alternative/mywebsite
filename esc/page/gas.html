@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="../pic/sigre.png">
+        <meta name="viewport" content="width=640" />
+        <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+        <link rel="stylesheet" href="../css/textback.css">
+        <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="../back/paginathing.min.js"></script> 
+        <script defer src="../back/sls.js"></script>
+        <script defer src="../back/ws.js"></script>
+        <script defer src="../back/4saw.js"></script>
+        <link rel="stylesheet" href="../css/link.css">
+        <title>LINEとDiscordの連携の作り方</title>
+        <meta property="og:title" content="LINEとDiscordの連携の作り方">
+        <meta property="og:url" content="https://sigumaguro-5second.netlify.app/gas.html">
+        <meta property="og:image" content="https://sigumaguro-5second.netlify.app/pic/discordicon.jpg">
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content="がっつりプログラム書きます。" /> 
+        <meta property="og:site_name" content="時雨【5秒のサーバー】 ポータルサイト" /> 
+    </head>
+    <body>
+        <div id="ba">
+            <div id="bg"></div>
+            <canvas id="canvasOverlay"></canvas>
+            <div class="container">
+                <header>
+                    <nav class="global-nav">
+                        <ul class="nav-list">
+                            <li class="nav-item"><a href="../index.html">トップ</a></li>
+                            <li class="nav-item"><a href="list.html">記事一覧</a></li>
+                            <li class="nav-item"><a href="pro.html">メンバー紹介</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <br><br><br><br>
+            </div>
+            <div class="topwrapper">
+                <div class="topbar">
+                    <div class="textback">
+                        <h1>LINEとDiscordの連携の作り方</h1>
+                        更新日時　2021/11/25
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="mainbar">
+                        <div class="textback">
+                            <h1><a id="con1">概要</a></h1>
+                            前回の記事で書いたLINEとDiscord間のメッセージ連携の作り方です。<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://sigumaguro-5second.netlify.app/page/dis-line.html" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe>
+                            </iframe>
+                            <h1><a id="con2">使うもの</a></h1>
+                            <b>Google Apps Script(通称GAS)</b><br>
+                            ・Googleが提供するアプリ開発用プラットホーム。いろんなことできます。<br>
+                            　httpリクエスト特化で使用します。<br>
+                            <b>Glitch</b><br>
+                            ・こちらもアプリ開発用のプラットホーム。Webアプリを作成できます。<br>
+                            　APIを利用します。<br>
+                            <b>Gyazo</b><br>
+                            ・限定公開（URLを知らないと見れない）形式で画像を送信できるWebサービス。容量無制限かつAPIあり。<br>
+                            　LINEからDiscordへ画像を送信する際に使用します。<br>
+                            <b>Discord.js</b><br>
+                            ・Discordをプログラムで扱えるようにするもの。<br>
+                            <b>LINE Messageing API</b><br>
+                            ・同じくLINEをプログラムで扱えるようにするもの。<br>
+                            ここにあるやつはすべてタダで利用できます。<br>
+                            <h1><a id="con3">全体図</a></h1>
+                            <h2><a id="con3-1">LINEからDiscordへ</a></h2>
+                            <img class="dislive" src="../pic/d-bot.JPG"><br>
+                            一方通行です。<br>
+                            1,GASでLINEからのメッセージを監視。<br>
+                            2,メッセージが来た場合、内容を受け取り、Webhookの形式でDiscordに送信。<br>
+                            <h2><a id="con3-2">DiscordからLINEへ</a></h2>
+                            <img class="dislive" src="../pic/l-bot.JPG"><br>
+                            ちょっと複雑です。<br>
+                            1,GASでGlitchへリクエストを送信→24時間稼働させ、Discordからのメッセージを監視する。<br>
+                            2,Discordからメッセージが来た場合、Glitchが受け取る。<br>
+                            3,GlitchでGASが扱える形式に変換し、GASに送信。<br>
+                            4,GASがメッセージをLINEの形式に変換し、LINEへ送信する。<br>
+                            <h2><a id="con3-3">GASの役割</a></h2>
+                            ・LINEからメッセージを受け取り、Discordに送信。<br>
+                            ・5分おきにGlitch側にリクエストを送り、24時間稼働させる。<br>
+                            ・LINEから送られてきた画像をgyazoに送信し、URLを取得。それをDiscordに送信。<br>
+                            ・Discordからメッセージが送られてきた場合、Glitchからメッセージを受け取り、LINEに送信。<br>
+                            ・友達数、当月分のプッシュを確認し、一日当たりのプッシュ上限を定める。<br>
+                            <h2><a id="con3-4">Glitchの役割</a></h2>
+                            ・Discordからメッセージを受け取り、GASを経由してLINEに送信。<br>
+                            ・Discordから画像が送られてきた場合、そのURLを取得して送信。<br>
+                            <h2><a id="con3-5">Gyazoの役割</a></h2>
+                            ・LINEから送られてきた画像（バイナリデータ）をjpgに変換し、URLを取得する。<br>
+                            <h1><a id="con4">下準備</a></h1>
+                            下準備として、LINEbot、Discordbot、DiscordWebhook、gyazoAPIを取得しましょう。<br>
+                            LINEbot(控えるもの：アクセストークン)<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://sigumaguro-5second.netlify.app/page/linedev.html" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe>
+                            <br>Discordbot(控えるもの：アクセストークン)<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://discordpy.readthedocs.io/ja/latest/discord.html" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe>
+                            <br><a href="https://note.com/project_j_k/n/ndebd26cb6189#vwm3J">DiscordWebhook(直に飛べます、控えるもの：URL)</a><br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://note.com/project_j_k/n/ndebd26cb6189#vwm3J" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe>
+                            <br>Gyazo(控えるもの：アクセストークン)<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://qiita.com/n0bisuke/items/10f57597787588aa62a0" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe>
+                            <br>上記のURLで説明してます。<br>
+                            <h1><a id="con5">gasでbot作成</a></h1>
+                            <h2><a id="con5-1">コードを書く</a></h2>
+                            GoogleDriveへ移動し、gasを起動します。<br>
+                            新規→その他→Google Apps Scriptで出てくるはずです。<br>
+                            <img src="../pic/drivenew.JPG">
+                            <img src="../pic/driveapps.JPG"><br>
+                            そうするとすぐにエディタが映るので、プログラムを書きましょう。<br>
+                            ソースコードはGitHub載せてあります。下記URLからコピペしましょう。<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://github.com/maguro-alternative/line_to_discord-for-gas" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe><br>
+                            main.gsのCHANNEL_ACCESS_TOKENにはLINEbotで発行したアクセストークンを入れてください。<br>
+                            GLITCH_URLは後で作るglitchプロジェクトのURLです。後述します。<br>
+                            discord.gsのwebhookURLにはDiscordWebhookで発行したURLを入れます。<br>
+                            image.gsのaccess_tokenにはgyazoのトークンを入れます。<br>
+                            <h2><a id="con5-2">ウェブアプリケーションとして実装</a></h2>
+                            メニューバーの公開からウェブアプリケーションとして公開を選択します。<br>
+                            <img src="../pic/apps.JPG"><br>
+                            <img class="dislive" src="../pic/gweb.JPG"><br>
+                            プロジェクトバージョンは常にnew、実行ユーザーはme(自分のGmailアドレス)、アクセスできるユーザーはAnyone, even anonymousで更新します。<br>
+                            <img class="dislive" src="../pic/wer.JPG"><br>
+                            初回時に更新すると警告が表示されますが、無視して承認しましょう。<br>
+                            <img class="dislive" src="../pic/wer2.JPG"><br>
+                            <img class="dislive" src="../pic/wer3.JPG"><br>
+                            承認されるとhttps://script.google.com/ ....というURLが表示されます。<br>
+                            これをLINEbotのwebhookに登録します。<br>
+                            後述のGlitchでも使用するので控えておきましょう。<br>
+                            <img class="dislive" src="../pic/webhook.JPG"><br>
+                            200のコードを確認した場合、成功です。次に進みます。<br>
+                            <h1><a id="con6">Glitch</a></h1>
+                            GlitchでDiscord側のメッセージを監視するbotを作成します。<br>
+                            Glitchに登録して、<a href="https://glitch.com/~pumped-chopper">テンプレート</a>から作成します。<br>
+                            Remix Your Ownからエディターに移動します。<br>
+                            こちらもソースコードはGitHub載せてあります。main.jsの部分を書き換えましょう。<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://github.com/maguro-alternative/line_to_discord" 
+                            width="300" height="150" frameborder="0" scrolling="no"></iframe><br>
+                            main.jsだけでは動かないので.envファイルに記述します。<br>
+                            DISCORD_BOT_TOKENに取得したDiscordbotのトークンを入力します。<br>
+                            GASにリクエストを送るためGAS_URLを追加し、URLを入れます。<br>
+                            また、リクエストを送る必要があるため、requestモジュールをインストールする必要があります。<br>
+                            package.jsonを開き、Add packageでrequestと検索し、インストールしましょう。<br>
+                            これでGlitch側は完成です。<br>
+                            <h1><a id="con7">Glitch_URLの指定</a></h1>
+                            <a href="con5-1">先ほど空けておいた</a>Glitch_URLを指定します。<br>
+                            下記URLにプロジェクト名を入れ、設定します。<br>
+                            https://{Glitchプロジェクト名}.glitch.me/<br>
+                            (プロジェクト名がline-to-discordの場合、https://line-to-discord.glitch.me/)<br>
+                            追加した後、忘れずに<a href="con5-2">更新を掛けましょう。</a><br>
+                            <h1><a id="con8">トリガーの設定</a></h1>
+                            最後に24時間稼働させるためにトリガーを設定します。<br>
+                            編集から現在のプロジェクトのトリガーを選択し、新規作成します。<br>
+                            <img src="../pic/SDT.JPG"><br>
+                            <img class="dislive" src="../pic/DevilTrigger.JPG"><br>
+                            設定は上記の通りです。保存したら完成です。<br>
+                            <h1><a id="con9">完成！！</a></h1>
+                            試しにメッセージを送ってみましょう。<br>
+                            <img class="sumaho" src="../pic/IMG_8332.JPG">
+                            <img class="sumaho" src="../pic/IMG_8331.JPG"><br>
+                            <img class="lineren" src="../pic/lineren.JPG"><br>
+                            (前回の記事の使いまわしです、、、ごめんなさい。)<br>
+                            こんな感じに動作します。<br>
+                            <h1><a id="con10">あとがき</a></h1>
+                            結構頭抱えながら作りました。（笑）<br>
+                            本当にわからないことが多く、いちいち調べていたので実装にかなり時間がかかりました。<br>
+                            ですがウェブリクエストの勉強には大きく役立ったと思います。<br>
+                            特に画像の送受信はネットを探しても見当たらなかったので、大きな進捗ではないでしょうか。<br>
+                            ただLINEの画像をバイナリデータからGyazoに渡すので処理に若干時間がかかります。<br>
+                            そのあたりが今後の課題です。<br>
+                            <h1><a id="con11">参考リンク</a></h1>
+                            マジでお世話になりました。ありがとうございます。<br>
+                            参考リンク1<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://qiita.com/i_tatte/items/6cd8d9ce0a93df249937" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                            参考リンク2<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://torikurosu.hatenablog.com/entry/2020/12/31/020915" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                            参考リンク3<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://qiita.com/sy250f/items/7fe62873255e1b4e4c2b" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                            参考リンク4<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://web.archive.org/web/20170724151212/http://yoshiyuki-hirano.hatenablog.jp/entry/2015/09/18/153155" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                            参考リンク5<br>
+                            <iframe 
+                            class="hatenablogcard" 
+                            style="width:100%;height:155px;max-width:680px;" 
+                            title="【ブログタイトル】" 
+                            src="https://hatenablog-parts.com/embed?url=https://qiita.com/84zume/items/85120c560e747fbb4520" 
+                            width="300" height="150" frameborder="0" scrolling="no">
+                            </iframe><br>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="listback">
+                            <li><a href="#con1">概要</a></li>
+                            <li><a href="#con2">使うもの</a></li>
+                            <li><a href="#con3">全体図</a></li>
+                            <div class="listside"><li><a href="#con3-1">LINEからDiscordへ</a></li></div>
+                            <div class="listside"><li><a href="#con3-2">DiscordからLINEへ</a></li></div>
+                            <div class="listside"><li><a href="#con3-3">GASの役割</a></li></div>
+                            <div class="listside"><li><a href="#con3-4">Glitchの役割</a></li></div>
+                            <div class="listside"><li><a href="#con3-5">Gyazoの役割</a></li></div>
+                            <li><a href="#con4">下準備</a></li>
+                            <li><a href="#con5">gasでbot作成</a></li>
+                            <div class="listside"><li><a href="#con5-1">コードを書く</a></li></div>
+                            <div class="listside"><li><a href="#con5-2">ウェブアプリケーションとして実装</a></li></div>
+                            <li><a href="#con6">Glitch</a></li>
+                            <li><a href="#con7">Glitch_URLの指定</a></li>
+                            <li><a href="#con8">トリガーの設定</a></li>
+                            <li><a href="#con9">完成！！</a></li>
+                            <li><a href="#con10">あとがき</a></li>
+                            <li><a href="#con11">参考リンク</a></li>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../pic/sigre.png">
+    <meta name="viewport" content="width=660" />
+    <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+    <link rel="stylesheet" href="../css/textback.css">
+    <script defer src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="../back/paginathing.min.js"></script> 
+    <script defer src="../back/sls.js"></script>
+    <script defer src="../back/ws.js"></script>
+    <script defer src="../back/4saw.js"></script>
+    
+    <link rel="stylesheet" href="../css/link.css">
+    <title>記事一覧</title>
+    <meta property="og:title" content="メンバー紹介">
+    <meta property="og:url" content="https://sigumaguro-5second.netlify.app/page/list.html">
+    <!--<meta property="og:image" content="https://sigumaguro-5second.netlify.app/pic/sigre.png">-->
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="記事一覧です。随時更新します" /> 
+    <meta property="og:site_name" content="時雨【5秒のサーバー】 ポータルサイト" /> 
+</head>
+<body>
+    <div id="ba">
+        <div id="bg"></div>
+        <canvas id="canvasOverlay"></canvas>
+        <div class="container">
+            <header>
+                <nav class="global-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="../index.html">トップ</a></li>
+                        <li class="nav-item"><a href="list.html">記事一覧</a></li>
+                        <li class="nav-item"><a href="pro.html">メンバー紹介</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="link-table">
+            <tbody>
+                <tr>
+                    <div class="link-item">
+                        <a href="piyoafter.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="https://connpass-tokyo.s3.amazonaws.com/thumbs/49/60/4960702207190660b7929d40b383deb1.png">
+                            <h3>PiyoConfを終えて</h3>
+                            <p>大満足<br>2021/12/5</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="piyomag.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="https://connpass-tokyo.s3.amazonaws.com/thumbs/49/60/4960702207190660b7929d40b383deb1.png">
+                            <h3>piyoconfに登壇します。</h3>
+                            <p>好き勝手やります。<br>2021/12/2</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="gas.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/discordicon.jpg">
+                            <h3>LINEとDiscordの連携の作り方</h3>
+                            <p>前回公開したbotの作り方です。<br>2021/11/25</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="dis-line.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/discordicon.jpg">
+                            <h3>完成！！！DiscordとLINEのメッセージ連携！</h3>
+                            <p>Discord-LINE間でのメッセージ連携できました。<br>2021/11/16</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="curp.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/discordicon.jpg">
+                            <h3>Discord-CustomRPの使い方。</h3>
+                            <p>discordのゲームアクティビティを偽装できます。<br>2021/10/4</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="disbot.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/discordicon.jpg">
+                            <h3>DiscordAPIで遊ぶ話。</h3>
+                            <p>知っているか知らないかで5000兆倍の違いありです(当社比)。<br>2021/9/27</p>
+                        </a>
+                    </div>
+                </tr>
+                <tr>
+                    <div class="link-item">
+                        <a href="linebot.html" style="animation: fadeIn 1s;">
+                            <img class="kigi1" src="../pic/LINE_Icon.png">
+                            <h3>作ったLINEbot</h3>
+                            <p>大学1年の時に暇つぶしで作りました。<br>2021/9/23</p>
+                        </a>
+                    </div>
+                </tr>
+        <script type="text/javascript">
+            jQuery(document).ready(function($){
+                $('.link-table').paginathing({
+                    perPage: 10,
+                    firstLast: true,
+                    prevText:'prev' ,
+                    nextText:'next' ,
+                    activeClass: 'active'
+                })
+            });
+        </script>
+    </div>
+</section>
+</body>
+</html>
